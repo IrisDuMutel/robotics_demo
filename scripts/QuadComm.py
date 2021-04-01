@@ -4,7 +4,7 @@ import rospy
 from std_msgs.msg import String
 from robotics_demo.msg import QuadComm
 
-def QuadComm():
+def QuadCommands():
     pub = rospy.Publisher('QuadCommands', QuadComm, queue_size=10)
     rospy.init_node('QuadComm', anonymous=True)
     msg = QuadComm()
@@ -12,13 +12,13 @@ def QuadComm():
     while not rospy.is_shutdown():
         msg.roll = 0
         msg.pitch = 0
-        msg.yaw = 0
+        msg.yaw = 0.5
         msg.h_vel = 0
         pub.publish(msg)
         rate.sleep()
 
 if __name__ == '__main__':
     try:
-        QuadComm()
+        QuadCommands()
     except rospy.ROSInterruptException:
         pass

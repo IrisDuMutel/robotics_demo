@@ -4,6 +4,7 @@ project(robotics_demo)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
+  nav_msgs
   geometry_msgs
   ros_tcp_endpoint
   message_generation
@@ -17,6 +18,7 @@ generate_messages(
   DEPENDENCIES
   geometry_msgs
   std_msgs
+  nav_msgs
 )
 
 catkin_package(CATKIN_DEPENDS
