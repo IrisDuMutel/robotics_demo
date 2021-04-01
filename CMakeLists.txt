@@ -27,6 +27,10 @@ catkin_install_python(PROGRAMS
   scripts/server_endpoint.py
   scripts/position_service.py
   scripts/color_publisher.py
+  scripts/QuadForces.py
+  scripts/QuadComm.py
+  scripts/SimpleSubscriber.py
+  scripts/SimplePublisher.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
