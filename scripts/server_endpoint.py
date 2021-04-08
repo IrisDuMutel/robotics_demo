@@ -5,6 +5,7 @@ import rospy
 from ros_tcp_endpoint import TcpServer, RosPublisher, RosSubscriber, RosService
 from robotics_demo.msg import PosRot, UnityColor, QuadComm ,QuadForce
 from robotics_demo.srv import PositionService
+from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
 
 def main():
@@ -23,7 +24,7 @@ def main():
         # Subscribers
         'color': RosSubscriber('color', UnityColor, tcp_server),
         'motorForce': RosSubscriber('motorForce', QuadForce, tcp_server),
-        'QuadCommands': RosSubscriber('QuadCommands', QuadComm, tcp_server)
+        'QuadCommands': RosSubscriber('QuadCommands', Twist, tcp_server)
     })
     
     rospy.spin()
