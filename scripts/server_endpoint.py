@@ -25,7 +25,8 @@ def main():
         'color': RosSubscriber('color', UnityColor, tcp_server),
         'motorForce': RosSubscriber('motorForce', QuadForce, tcp_server),
         'QuadCommands': RosSubscriber('QuadCommands', Twist, tcp_server),
-        'CubeCommand': RosSubscriber('CubeCommand', Odometry, tcp_server)
+        'CubeCommand': RosSubscriber('CubeCommand', Odometry, tcp_server),
+        'cmd_vel': RosSubscriber('cmd_vel', Twist, tcp_server)
     })
     
     rospy.spin()
