@@ -21,6 +21,7 @@ def main():
         # Publishers
         'pos_rot': RosPublisher('pos_rot', PosRot, queue_size=10),
         'odom': RosPublisher('odom', Odometry, queue_size=10),
+        'odom_2': RosPublisher('odom_2', Odometry, queue_size=10),
 
         # Subscribers
         'color': RosSubscriber('color', UnityColor, tcp_server),
