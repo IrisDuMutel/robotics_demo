@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/administrator/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/administrator/tensorflow/models",
+        "/home/administrator/tensorflow/models/research"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/administrator/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/administrator/tensorflow/models",
+        "/home/administrator/tensorflow/models/research"
+    ]
+}

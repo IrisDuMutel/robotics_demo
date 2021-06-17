@@ -4,6 +4,7 @@ import rospy
 
 from ros_tcp_endpoint import TcpServer, RosPublisher, RosSubscriber, RosService
 from robotics_demo.msg import UnityScene
+from robotics_demo.msg import TestMsg
 from robotics_demo.msg import PosRot, UnityColor, QuadComm ,QuadForce
 from robotics_demo.srv import PositionService
 from geometry_msgs.msg import Twist
@@ -22,6 +23,7 @@ def main():
         'pos_rot': RosPublisher('pos_rot', PosRot, queue_size=10),
         'odom': RosPublisher('odom', Odometry, queue_size=10),
         'odom_2': RosPublisher('odom_2', Odometry, queue_size=10),
+        'odometry': RosPublisher('odometry', TestMsg, queue_size=10),
 
         # Subscribers
         'color': RosSubscriber('color', UnityColor, tcp_server),
