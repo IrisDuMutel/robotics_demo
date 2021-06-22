@@ -4,7 +4,7 @@ import rospy
 
 from ros_tcp_endpoint import TcpServer, RosPublisher, RosSubscriber, RosService
 from robotics_demo.msg import UnityScene
-from robotics_demo.msg import TestMsg
+from robotics_demo.msg import TestMsg, OdometryMsg
 from robotics_demo.msg import PosRot, UnityColor, QuadComm ,QuadForce
 from robotics_demo.srv import PositionService
 from geometry_msgs.msg import Twist
@@ -24,6 +24,7 @@ def main():
         'odom': RosPublisher('odom', Odometry, queue_size=10),
         'odom_2': RosPublisher('odom_2', Odometry, queue_size=10),
         'odometry': RosPublisher('odometry', TestMsg, queue_size=10),
+        'BallOdometry': RosPublisher('BallOdometry', OdometryMsg, queue_size=10),
 
         # Subscribers
         'color': RosSubscriber('color', UnityColor, tcp_server),
@@ -31,7 +32,8 @@ def main():
         'QuadCommands': RosSubscriber('QuadCommands', Twist, tcp_server),
         'CubeCommand': RosSubscriber('CubeCommand', Odometry, tcp_server),
         'unity_input': RosSubscriber('unity_input', UnityScene, tcp_server),
-        'cmd_vel': RosSubscriber('cmd_vel', Twist, tcp_server)
+        'cmd_vel': RosSubscriber('cmd_vel', Twist, tcp_server),
+        'BallActions': RosSubscriber('BallActions', Twist, tcp_server)
     })
     
     rospy.spin()
