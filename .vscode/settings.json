@@ -10,5 +10,6 @@
         "/opt/ros/noetic/lib/python3/dist-packages",
         "/home/administrator/tensorflow/models",
         "/home/administrator/tensorflow/models/research"
-    ]
+    ],
+    "ros.distro": "noetic"
 }

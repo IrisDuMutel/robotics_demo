@@ -24,7 +24,7 @@ def main():
         'odom': RosPublisher('odom', Odometry, queue_size=10),
         'odom_2': RosPublisher('odom_2', Odometry, queue_size=10),
         'odometry': RosPublisher('odometry', TestMsg, queue_size=10),
-        'BallOdometry': RosPublisher('BallOdometry', OdometryMsg, queue_size=10),
+        'BallOdometry': RosPublisher('BallOdometry', TestMsg, queue_size=10),
 
         # Subscribers
         'color': RosSubscriber('color', UnityColor, tcp_server),
@@ -33,7 +33,8 @@ def main():
         'CubeCommand': RosSubscriber('CubeCommand', Odometry, tcp_server),
         'unity_input': RosSubscriber('unity_input', UnityScene, tcp_server),
         'cmd_vel': RosSubscriber('cmd_vel', Twist, tcp_server),
-        'BallActions': RosSubscriber('BallActions', Twist, tcp_server)
+        'BallActions': RosSubscriber('BallActions', Twist, tcp_server),
+        'ResetScene': RosSubscriber('ResetScene', OdometryMsg, tcp_server)
     })
     
     rospy.spin()
